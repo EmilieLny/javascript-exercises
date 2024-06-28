@@ -21,7 +21,7 @@ regions = [
 ["United States","New York","Boston"],
 ["Canada","Ontario","Quebec"],
 ["South America","Brazil"]
-],
+]
 
 region1 = "Quebec",
 region2 = "New York"
