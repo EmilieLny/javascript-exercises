@@ -46,3 +46,30 @@ The number of nodes in the tree is in the range [2, 10^5].
 All Node.val are unique.
 p != q
 p and q exist in the tree.
+
+## Notes
+
+LCA
+
+- looking for 2 nodes (q & p) + binary tree + no parents
+
+  - solution: recursive
+    - iterate the tree to return p & q;
+    - on recursive resolved (bubble up), check if:
+      - q & p are in my right & left = current node is the solution
+      - the solution is in my right | left = i bubble up the current solution
+    - note: the base case will update the highest p | q node as LCA in case they are on the same path: `if (root == p || root == q) return root;`
+
+- looking for 2 nodes (q & p) + tree + no parents
+
+  - solution: recursive
+    - iterate the tree to return p & q - go down;
+    - on recursive resolved (bubble up), check if:
+      - q & p are my children = current node is the solution
+      - 1 solution is in my children = i bubble up the current solution
+    - note: the base case will update the highest p | q node as LCA in case they are on the same path: `if (root == p || root == q) return root;`
+
+- looking for 2 nodes (q & p) + tree + with parents
+  - solution:
+    - create one path to the root using `Set`
+    - iterate the second path while looking for an ancestor that exist in the `Set` & return it
