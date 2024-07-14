@@ -6,7 +6,7 @@ class Spreadsheet {
         this.columnsOrdered = columns;
         this.grid = {};
         columns.forEach(col => {
-            this.grid[col] = new Array(4).fill(null);
+            this.grid[col] = new Array().fill(null);
         })
     }
 
