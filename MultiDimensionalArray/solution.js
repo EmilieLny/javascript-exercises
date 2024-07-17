@@ -25,18 +25,14 @@ class MultiDimensionArray {
         this.shapes.forEach(shape => arrayLength *= shape)
         this.data = new Array(arrayLength).fill(0);
     }
-
     set(position, value) {
-        let res = 0;
-        for (const i = 0; i < position.length; i++) {
-            let indexOfPosition = 1;
-            for (const j = i; j < this.shapes.length; j++) {
-                indexOfPosition *= this.shapes[j]
-            }
-            indexOfPosition *= position[i];
-            res += indexOfPosition;
+        let index = 0;
+        let multiplier = 1;
+        for (let i = position.length - 1; i >= 0; i--) {
+            index += position[i] * multiplier;
+            multiplier *= this.shapes[i];
         }
-        this.data[this.shapes[1] * position[0] + position[1]] = value;
+        this.data[index] = value;
     }
 }
 
