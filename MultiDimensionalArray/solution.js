@@ -21,8 +21,7 @@
 class MultiDimensionArray {
     constructor(shapes) {
         this.shapes = shapes;
-        let arrayLength = 1;
-        this.shapes.forEach(shape => arrayLength *= shape)
+        const arrayLength = this.shapes.reduce((acc, shape) => acc * shape, 1);
         this.data = new Array(arrayLength).fill(0);
     }
     set(position, value) {
