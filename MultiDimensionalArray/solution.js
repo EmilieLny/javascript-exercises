@@ -28,9 +28,9 @@ class MultiDimensionArray {
     set(position, value) {
         let index = 0;
         let multiplier = 1;
-        for (let j = position.length - 1; j >= 0; j--) {
-            index += position[j] * multiplier;
-            multiplier *= this.shapes[j];
+        for (let i = position.length - 1; i >= 0; i--) {
+            index += position[i] * multiplier;
+            multiplier *= this.shapes[i];
         }
         this.data[index] = value;
     }
