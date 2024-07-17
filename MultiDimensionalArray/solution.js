@@ -33,6 +33,7 @@ class MultiDimensionArray {
         }
         this.data[index] = value;
     }
+
 }
 
 const newArray = new MultiDimensionArray([2, 3])
