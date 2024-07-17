@@ -20,6 +20,7 @@
 
 class MultiDimensionArray {
     constructor(shapes) {
+        // This is a comment
         this.shapes = shapes;
         const arrayLength = this.shapes.reduce((acc, shape) => acc * shape, 1);
         this.data = new Array(arrayLength).fill(0);
@@ -27,9 +28,9 @@ class MultiDimensionArray {
     set(position, value) {
         let index = 0;
         let multiplier = 1;
-        for (let i = position.length - 1; i >= 0; i--) {
-            index += position[i] * multiplier;
-            multiplier *= this.shapes[i];
+        for (let j = position.length - 1; j >= 0; j--) {
+            index += position[j] * multiplier;
+            multiplier *= this.shapes[j];
         }
         this.data[index] = value;
     }
