@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@datastructures-js/linked-list": "^6.1.3"
+  }
+}
