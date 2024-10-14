@@ -18,14 +18,11 @@ var LRUCache = function (capacity) {
 LRUCache.prototype.get = function (key) {
     const lruNode = this.keyNodeMap?.[key];
     if (!lruNode) {
-        console.log("get", -1)
         return -1
     };
     this.linkedList.remove(lruNode);
     this.linkedList.insertLast(key);
     this.keyNodeMap[key] = this.linkedList.tail();
-
-    console.log("get", this.keyValueMap[key])
 
     return this.keyValueMap[key];
 };
